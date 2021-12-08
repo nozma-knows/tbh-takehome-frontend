@@ -1,0 +1,60 @@
+.UserReferral {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #fbf8f3;
+}
+
+.UserReferral-GIF {
+  display: flex;
+  width: 167px;
+  height: 110px;
+  margin-bottom: 30px;
+  background-color: #c4c4c4;
+}
+
+.UserReferral-Title {
+  display: flex;
+  font-family: "Poppins-700";
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #1c216c;
+}
+
+.UserReferral-Message {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  margin-bottom: 36px;
+  color: #555891;
+}
+
+.UserReferral-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.UserReferral-Form-Name {
+  display: flex;
+}
+
+@font-face {
+  font-family: "Poppins-400";
+  src: local("Poppins-400"), url(./fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-600";
+  src: local("Poppins-600"),
+    url(./fonts/Poppins-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-700";
+  src: local("Poppins-700"), url(./fonts/Poppins-Bold.ttf) format("truetype");
+}

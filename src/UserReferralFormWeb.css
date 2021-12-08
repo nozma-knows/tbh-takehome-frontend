@@ -1,0 +1,84 @@
+.UserReferralFormWeb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.UserReferralFormWeb-Name {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.UserReferralFormWeb-Name-Input {
+  display: flex;
+  width: 216px;
+  height: 53px;
+  padding-left: 24px;
+  border-radius: 12px;
+  border: 1px solid #f8f0e0;
+  border-color: #f8f0e0;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  color: #111554;
+}
+
+.UserReferralFormWeb-Email {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+
+.UserReferralFormWeb-Email-Input {
+  display: flex;
+  width: 476px;
+  height: 53px;
+  padding-left: 24px;
+  border-radius: 12px;
+  border: 1px solid #f8f0e0;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  color: #111554;
+  margin-bottom: 5px;
+}
+
+.UserReferralFormWeb-Invalid-Email {
+  display: flex;
+  margin-left: 24px;
+  font-family: "Poppins-400";
+  font-size: 15px;
+  color: #bc1010;
+}
+
+::placeholder {
+  color: #b8b9cc;
+}
+
+.UserReferralFormWeb-Button {
+  display: flex;
+  width: 140px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  background-color: #6aac89;
+  border-radius: 20px;
+  border: none;
+  font-family: "Poppins-600";
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* .UserReferralFormWeb-Button:hover {
+  cursor: pointer;
+} */
+
+@font-face {
+  font-family: "Poppins-400";
+  src: local("Poppins-400"), url(./fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-600";
+  src: local("Poppins-600"),
+    url(./fonts/Poppins-SemiBold.ttf) format("truetype");
+}
