@@ -1,15 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "./UserReferralFormWeb.css";
 
 export default function UserReferralFormWeb() {
+  // Boolean of whether or not form can be submitted
+  const [isValid, setIsValid] = useState(false);
+
+  // Variables for managing state of Form
   const {
     register,
     formState: { errors },
     handleSubmit,
+    watch,
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = (data) => console.log(data);
+  // Updates isValid variable
+  // If no fields are empty and email is valid, form can be submitted
+  const updateIsValid = () => {
+    if (
+      watch("firstName") &&
+      watch("lastName") &&
+      watch("emailAddress") &&
+      Object.keys(errors).length === 0
+    ) {
+      setIsValid(true);
+      console.log("valid");
+    } else {
+      setIsValid(false);
+      console.log("not valid");
+    }
+  };
+
+  // Calls updateIsValid on every render
+  useEffect(() => {
+    updateIsValid();
+  });
+
+  // Submits form data in JSON format for API when Submit button is clicked
+  const onSubmit = (data) => alert(JSON.stringify(data));
 
   return (
     <form className="UserReferralFormWeb" onSubmit={handleSubmit(onSubmit)}>
@@ -31,53 +59,26 @@ export default function UserReferralFormWeb() {
         <input
           className="UserReferralFormWeb-Email-Input"
           placeholder="Email"
-          {...register("email", {
+          {...register("emailAddress", {
             required: true,
             pattern: {
               value:
                 /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: "invalid email",
             },
           })}
         />
         <div className="UserReferralFormWeb-Invalid-Email">
-          {errors.email?.type === "pattern" && "invalid email"}
+          {errors.emailAddress?.type === "pattern" && "invalid email"}
         </div>
       </div>
       <input
         className="UserReferralFormWeb-Button"
-        // style={formState.isValue ? { opacity: "100%" } : { opacity: "25%" }}
+        style={
+          isValid ? { opacity: "100%", cursor: "pointer" } : { opacity: "25%" }
+        }
         type="submit"
-        // disabled={!formState.isValid}
+        disabled={!isValid}
       />
     </form>
   );
 }
-
-// const {
-//   register,
-//   formState: { errors },
-//   handleSubmit,
-// } = useForm();
-
-// const onSubmit = (data) => console.log(data);
-// form className="UserReferral-Form" onSubmit={handleSubmit(onSubmit)}>
-//   <div
-//     className="UserReferral-Form-Name"
-//     // style={display === "web" ? {} : { flexDirection: "colum" }}
-//   >
-//     <input
-//       className="UserReferral-Form-Input"
-// {...register("firstName", { required: true })}
-//     />
-//     <input
-//       className="UserReferral-Form-Input"
-//       {...register("lastName", { required: true })}
-//     />
-//   </div>
-//   <input
-//     className="UserReferral-Form-Input"
-//     {...register("email", { required: true })}
-//   />
-//   <input type="submit" />
-// </form>

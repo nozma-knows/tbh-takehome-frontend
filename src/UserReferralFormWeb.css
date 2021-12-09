@@ -44,6 +44,7 @@
 
 .UserReferralFormWeb-Invalid-Email {
   display: flex;
+  height: 10px;
   margin-left: 24px;
   font-family: "Poppins-400";
   font-size: 15px;
@@ -51,7 +52,7 @@
 }
 
 ::placeholder {
-  color: #b8b9cc;
+  color: var(--gray-500);
 }
 
 .UserReferralFormWeb-Button {
@@ -60,7 +61,7 @@
   height: 56px;
   justify-content: center;
   align-items: center;
-  background-color: #6aac89;
+  background-color: var(--green-300);
   border-radius: 20px;
   border: none;
   font-family: "Poppins-600";

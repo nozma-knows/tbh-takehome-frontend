@@ -1,3 +1,10 @@
+:root {
+  --dark-400: #555891;
+  --dark-500: #1c216c;
+  --gray-500: #b8b9cc;
+  --green-300: #6aac89;
+}
+
 .UserReferral {
   display: flex;
   flex-direction: column;
@@ -8,7 +15,16 @@
   background-color: #fbf8f3;
 }
 
-.UserReferral-GIF {
+.UserReferral-Logo {
+  position: absolute;
+  left: 24px;
+  top: 29px;
+  font-family: "Poppins-700";
+  font-size: 32px;
+  color: var(--dark-500);
+}
+
+.UserReferral-Image {
   display: flex;
   width: 167px;
   height: 110px;
@@ -16,7 +32,7 @@
   background-color: #c4c4c4;
 }
 
-.UserReferral-Title {
+.UserReferral-Header {
   display: flex;
   font-family: "Poppins-700";
   font-size: 32px;
@@ -24,14 +40,14 @@
   color: #1c216c;
 }
 
-.UserReferral-Message {
+.UserReferral-Subheader {
   display: flex;
   justify-content: center;
   text-align: center;
   font-family: "Poppins-400";
   font-size: 18px;
   margin-bottom: 36px;
-  color: #555891;
+  color: var(--dark-400);
 }
 
 .UserReferral-Form {
