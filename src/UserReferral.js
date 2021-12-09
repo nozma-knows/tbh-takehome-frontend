@@ -13,7 +13,6 @@ export default function UserReferral() {
   // Function for updating screen width
   const updateWidth = () => {
     setWidth(window.innerWidth);
-    console.log("Width: ", window.innerWidth);
   };
 
   // Boolean of whether or not form can be submitted
@@ -25,12 +24,12 @@ export default function UserReferral() {
     formState: { errors },
     handleSubmit,
     watch,
+    reset,
   } = useForm({ mode: "onChange" });
 
   // Updates isValid variable
   // If no fields are empty and email is valid, form can be submitted
   const updateIsValid = () => {
-    console.log(errors);
     if (
       watch("firstName") &&
       watch("lastName") &&
@@ -51,7 +50,10 @@ export default function UserReferral() {
   });
 
   // Submits form data in JSON format for API when Submit button is clicked
-  const onSubmit = (data) => alert(JSON.stringify(data));
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+    reset();
+  };
 
   return (
     <div className="UserReferral">
@@ -94,7 +96,7 @@ export default function UserReferral() {
                   required: true,
                   pattern: {
                     value:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                   },
                 })}
               />
@@ -134,7 +136,7 @@ export default function UserReferral() {
                   required: true,
                   pattern: {
                     value:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                   },
                 })}
               />
