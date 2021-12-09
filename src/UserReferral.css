@@ -29,7 +29,8 @@
   width: 167px;
   height: 110px;
   margin-bottom: 30px;
-  background-color: #c4c4c4;
+  border-radius: 12px;
+  background-color: var(--dark-500);
 }
 
 .UserReferral-Header {
@@ -53,10 +54,99 @@
 .UserReferral-Form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.UserReferral-Form-Name {
+.UserReferral-Form-Name-Container {
   display: flex;
+  margin-bottom: 16px;
+}
+
+.UserReferral-Form-Web-Name-Input {
+  display: flex;
+  width: 216px;
+  height: 53px;
+  padding-left: 24px;
+  border-radius: 12px;
+  border: 1px solid #f8f0e0;
+  border-color: #f8f0e0;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  color: #111554;
+}
+
+.UserReferral-Form-Email-Container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+
+.UserReferral-Form-Web-Email-Input {
+  display: flex;
+  width: 476px;
+  height: 53px;
+  padding-left: 24px;
+  border-radius: 12px;
+  border: 1px solid #f8f0e0;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  color: #111554;
+  margin-bottom: 5px;
+}
+
+.UserReferral-Form-Invalid-Email {
+  display: flex;
+  height: 10px;
+  margin-left: 24px;
+  font-family: "Poppins-400";
+  font-size: 15px;
+  color: #bc1010;
+}
+
+::placeholder {
+  color: var(--gray-500);
+}
+
+.UserReferral-Form-Button {
+  display: flex;
+  width: 140px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-300);
+  border-radius: 20px;
+  border: none;
+  font-family: "Poppins-600";
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.UserReferral-Form-Mobile-Name-Input {
+  display: flex;
+  width: 320px;
+  height: 53px;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid #f8f0e0;
+  border-color: #f8f0e0;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  color: #111554;
+}
+
+.UserReferral-Form-Mobile-Email-Input {
+  display: flex;
+  width: 320px;
+  height: 53px;
+  padding-left: 24px;
+  border-radius: 12px;
+  border: 1px solid #f8f0e0;
+  font-family: "Poppins-400";
+  font-size: 18px;
+  color: #111554;
+  margin-bottom: 5px;
 }
 
 @font-face {

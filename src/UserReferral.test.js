@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import UserReferall from "./UserReferralForm";
+import UserReferral from "./UserReferral";
 
 test("renders learn react link", () => {
-  render(<UserReferall />);
+  render(<UserReferral />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
